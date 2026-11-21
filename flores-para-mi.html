@@ -68,8 +68,378 @@ nav{height:132px}.brand{display:block;flex-shrink:0}.logo-frame{display:block;wi
 #materials-viewer{width:calc(100vw - 28px);max-width:1500px;max-height:94dvh;padding:18px;border-radius:18px;background:#F6F0EA;color:#7A2E5C;border:1px solid #7A2E5C30}#materials-viewer::backdrop{background:#7A2E5CA6}.materials-viewer-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:12px}.materials-viewer-toolbar h3{font-size:18px;margin:0}.materials-viewer-close{font:500 14px 'Poppins',sans-serif;background:#7A2E5C;color:white;border:0;border-radius:9px;min-height:44px;padding:10px 18px;cursor:pointer}.materials-viewer-help{font-size:12px;margin:0 0 12px}.materials-viewer-scroll{overflow:auto;max-height:72dvh;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.materials-viewer-scroll img{display:block;width:max(100%,1400px);height:auto;max-width:none}.materials-original-link{display:inline-block;font-size:12px;margin-top:12px;text-underline-offset:3px}
 @media(max-width:750px){.experience-includes{padding:48px 0}.experience-includes .includes{grid-template-columns:1fr}.materials-section{padding:55px 0}.materials-heading{margin-bottom:26px}.materials-heading p{font-size:14px}.materials-copy{margin-top:24px}.materials-closing{font-size:16px}.materials-image-button,.materials-image-button img{border-radius:12px}.materials-figure figcaption{font-size:11px}.materials-viewer-toolbar h3{font-size:15px}#materials-viewer{padding:12px}.materials-viewer-close{padding:9px 13px;flex-shrink:0}}
 .links .site-return{display:inline-flex!important;font-size:14px;white-space:nowrap}@media(max-width:750px){.links{gap:12px}.links .site-return{font-size:14px}.links .nav-cta{max-width:110px}}
+</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"><style id="shared-site-header">
+.site-header{font:18px/1.6 'DM Sans',Arial,sans-serif;color:#171313;letter-spacing:normal}.site-header a{text-decoration:none;color:inherit}.site-header img{display:block;max-width:100%;height:auto}.site-header .brand{font:inherit;letter-spacing:normal}.site-header .main-nav{height:auto;padding:0;border:0;letter-spacing:normal}.site-header .btn{font-family:inherit;letter-spacing:normal;cursor:pointer;line-height:1.6}.site-header button{font-family:inherit;cursor:pointer;line-height:1.62}
+.site-header{
+  --bg: #fffaf7;
+  --paper: #fffdfb;
+  --ink: #171313;
+  --muted: #5d5653;
+  --pink: #df0b64;
+  --pink2: #f02d79;
+  --soft-pink: #fde8e8;
+  --line: #eadbd4;
+  --purple: #8a3ac8;
+  --orange: #fb6a0b;
+  --shadow: 0 12px 30px rgba(76, 31, 31, .08);
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', Arial, sans-serif;
+}
+.site-header .container{
+  width: min(1480px, calc(100% - 48px));
+  margin-inline: auto
+}
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 250, 247, .94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(234, 219, 212, .8)
+}
+.site-header .nav-wrap{
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 28px
+}
+.site-header .brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 245px
+}
+.site-header .brand-mark{
+  font-size: 44px;
+  line-height: 1
+}
+.site-header .brand strong{
+  font: 600 22px/1.05 var(--serif);
+  display: block
+}
+.site-header .brand small{
+  font-size: 12.32px;
+  letter-spacing: .06em
+}
+.site-header .main-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  flex: 1;
+  font-size: 15.68px;
+  font-weight: 600
+}
+.site-header .main-nav a{
+  position: relative;
+  padding: 28px 0 24px
+}
+.site-header .main-nav a.active,
+.site-header .main-nav a:hover{
+  color: var(--pink)
+}
+.site-header .main-nav a.active:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  height: 2px;
+  background: var(--pink)
+}
+.site-header .nav-actions{
+  display: flex;
+  gap: 12px
+}
+.site-header .menu-toggle{
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 26px
+}
+.site-header .btn{
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 15.68px;
+  transition: .25s ease;
+  border: 1.5px solid transparent
+}
+.site-header .btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(223, 11, 100, .15)
+}
+.site-header .btn-primary{
+  background: linear-gradient(90deg, #d8085d, #e50c68);
+  color: white
+}
+.site-header .btn-outline{
+  border-color: #f07ca7;
+  color: var(--pink);
+  background: rgba(255, 255, 255, .45)
+}
+.site-header .btn-small{
+  min-height: 42px;
+  padding: 9px 18px;
+  font-size: 14.56px
+}
+@media(max-width:1180px){
+.site-header .main-nav{
+    gap: 18px;
+    font-size: 13.44px
+  }
+.site-header .brand{
+    min-width: 210px
+  }
+.site-header .nav-actions .btn:first-child{
+    display: none
+  }
+}
+@media(max-width:900px){
+.site-header .menu-toggle{
+    display: block;
+    margin-left: auto
+  }
+.site-header .main-nav{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 82px;
+    background: #fffaf7;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--line)
+  }
+.site-header .main-nav.open{
+    display: flex
+  }
+.site-header .main-nav a{
+    padding: 6px 0
+  }
+.site-header .main-nav a.active:after{
+    bottom: 0
+  }
+.site-header .nav-actions{
+    display: none
+  }
+}
+@media(max-width:640px){
+.site-header .container{
+    width: min(100% - 28px, 1480px)
+  }
+.site-header .brand strong{
+    font-size: 20.16px
+  }
+.site-header .brand small{
+    font-size: 10.08px
+  }
+.site-header .brand-mark{
+    font-size: 34px
+  }
+}
+.site-header .container{
+  width: min(1540px, calc(100% - 64px))
+}
+@media(max-width:900px){
+.site-header .container{
+    width: min(100% - 36px, 1540px)
+  }
+}
+.site-header .main-nav{
+  font-size: 16px;
+}
+.site-header .btn{
+  font-size: 15px;
+}
+@media (max-width: 700px){
+.site-header .main-nav{
+    font-size: 15px;
+  }
+}
+.site-header{
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px){
+.site-header{
+    position: relative;
+    z-index: 1000;
+  }
+.site-header .nav-wrap{
+    min-height: 78px;
+  }
+.site-header .menu-toggle{
+    position: relative;
+    z-index: 1002;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    font-size: 29px;
+    line-height: 1;
+    background: transparent;
+    border: 0;
+  }
+.site-header .main-nav{
+    position: fixed;
+    inset: 0;
+    top: 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 112px 28px 36px;
+    background: rgba(255, 250, 247, .99);
+    border: 0;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+  }
+.site-header .main-nav.open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+.site-header .main-nav a{
+    width: 100%;
+    padding: 12px 0;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+.site-header .main-nav a.active::after{
+    left: 0;
+    right: auto;
+    width: 40px;
+    bottom: 4px;
+  }
+}
+@media (max-width: 900px){
+.site-header{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 2147483640 !important;
+    isolation: isolate;
+  }
+.site-header .nav-wrap{
+    min-height: 72px !important;
+    width: calc(100% - 32px) !important;
+    position: static !important;
+  }
+.site-header .brand{
+    min-width: 0 !important;
+    position: relative;
+    z-index: 2147483646 !important;
+  }
+.site-header .brand img{
+    width: 118px !important;
+  }
+.site-header .menu-toggle{
+    position: fixed !important;
+    top: 14px !important;
+    right: 16px !important;
+    z-index: 2147483647 !important;
+    width: 44px !important;
+    height: 44px !important;
+    color: #171313 !important;
+  }
+.site-header .main-nav,
+.site-header .main-nav.open{
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 96px 28px 36px !important;
+    background: #fffaf7 !important;
+    backdrop-filter: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    z-index: 2147483645 !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 2px !important;
+  }
+.site-header .main-nav{
+    display: none !important;
+  }
+.site-header .main-nav.open{
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+.site-header .main-nav a{
+    display: block !important;
+    width: 100% !important;
+    padding: 14px 0 !important;
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+  }
+.site-header .main-nav a.active::after{
+    bottom: 7px !important;
+  }
+}
+@media (min-width: 901px){
+.site-header,
+.site-header{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    width: 100%;
+    background: rgba(255, 250, 247, 0.96) !important;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 18px rgba(104, 66, 73, 0.05);
+  }
+}
+.site-header{
+  --hero-bg: #fffaf7;
+  --hero-pink: #e90062;
+  --hero-text: #171111;
+  --hero-border: #f1dfda;
+}
+.site-header .btn-primary:hover{background:linear-gradient(90deg,#d8085d,#e50c68);color:#fff}.site-header .btn-outline:hover{background:rgba(255,255,255,.45);color:#df0b64}@media(max-width:900px){body.menu-open{overflow:hidden}body.menu-open main,body.menu-open footer{visibility:hidden}}
 </style></head><body>
-<nav aria-label="Navegación de Flores para mí"><a href="index.html" class="brand" aria-label="Inner Bloom Art · Inicio"><span class="logo-frame"><img src="assets/inner-bloom-logo-transparent-web.png" width="800" height="800" alt="Inner Bloom ART by Claudia Flores"></span></a><div class="links"><a class="site-return" href="cursos-online.html">Cursos online</a><a href="#experiencia">La experiencia</a><a href="#clau">Sobre mí</a><a href="#inscripcion" class="nav-cta">Este momento es para mí ↗</a></div></nav>
+<header class="site-header">
+        <div class="container nav-wrap">
+            <a aria-label="Inner Bloom Art" class="brand" href="index.html">
+                <img alt="logo" src="assets/logo.gif" style="width: 150px;" />
+            </a>
+            <button aria-expanded="false" aria-label="Abrir menú" class="menu-toggle">☰</button>
+            <nav aria-label="Navegación principal" class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="sobre-clau.html">Sobre Clau</a>
+                <a href="metodologia.html">Metodología</a>
+                <a href="cursos-online.html">Cursos Online</a>
+                <a class="active" aria-current="page" href="flores-para-mi.html">Flores para mí</a>
+                <a href="curso-presencial.html">Taller Presencial</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="btn btn-outline btn-small" href="https://forms.gle/s3ftseDUeAhvk6Lq8">Test emocional ♡</a>
+                <a class="btn btn-primary btn-small" href="https://wa.me/5215564811181" rel="noopener"
+                    target="_blank">Escríbeme ◉</a>
+            </div>
+        </div>
+    </header>
 <main><section class="hero wrap" id="inicio"><div><div class="eyebrow">Flores para mí · Curso online</div><h1>Flores <span>para Mí</span></h1><p class="hero-subtitle">Tu primer paso para <span>Regresar a ti</span></p><p class="intro">Has dedicado tanto tiempo a los demás… ¿cuándo fue la última vez que hiciste algo solo para ti?</p><p>Regálate un espacio para escucharte, reconectar con lo que necesitas y crear una obra que te recuerde lo valiosa que eres.</p><a class="btn" href="#inscripcion">QUIERO REGALARME ESTE MOMENTO <span>↗</span></a><div class="note">No necesitas saber pintar. Solo darte permiso de empezar.</div></div><div class="art"><img class="hero-photo" src="assets/flor-hero.jpg" width="1122" height="1402" fetchpriority="high" alt="Flor de la campaña Flores para Mí, con pétalos rosa, lavanda y durazno pintados en acrílico"><div class="art-caption">Algo hermoso puede comenzar contigo.</div></div></section>
 <div class="strip method-doodles method-portraits" aria-label="Meditación, arte e introspección"><div class="method-item"><img src="assets/clau-meditando-web.png" width="600" height="600" loading="lazy" alt="Clau meditando"><span>Meditación</span><p>Una pausa para escucharte.</p></div><div class="method-item"><img src="assets/clau-pintando-web.png" width="600" height="600" loading="lazy" alt="Clau pintando"><span>Arte</span><p>Un espacio para expresarte.</p></div><div class="method-item"><img src="assets/clau-reflexionando-web.png" width="600" height="600" loading="lazy" alt="Clau reflexionando"><span>Introspección</span><p>Un momento para reconocerte.</p></div></div>
 <section class="section wrap split" id="para-ti"><div><div class="eyebrow">Una invitación a elegirte</div><h2>Este espacio<br>es <em>para ti.</em></h2><p class="quote">Tú también mereces el amor, la atención y el tiempo que entregas a los demás.</p></div><div class="text"><p>Has pasado tanto tiempo cuidando, resolviendo y estando para los demás que a veces te olvidas de preguntarte cómo estás tú.</p><p>Si estás viviendo una etapa de cambios, quieres conocerte mejor o simplemente deseas regalarte un momento de calma, creatividad y conexión contigo misma.</p><p>A veces la vida se llena de pendientes, responsabilidades y expectativas, y sin darte cuenta, tú vas quedando al final de la lista. Sabes que necesitas un espacio para ti, pero no siempre sabes por dónde empezar.</p><p><strong>¿Y si hoy comienzas a elegirte?</strong> Puedes comenzar con algo tan sencillo como una pincelada.</p><p>No necesitas experiencia artística. Solo curiosidad, apertura y ganas de dedicarte tiempo.</p></div></section>
@@ -82,4 +452,5 @@ nav{height:132px}.brand{display:block;flex-shrink:0}.logo-frame{display:block;wi
 <div class="materials-copy"><p>Los materiales no están incluidos en el curso. Puedes comprarlos donde prefieras, utilizar los que ya tengas o consultar nuestras recomendaciones.</p>
 <details class="materials-recommendations"><summary>Ver materiales recomendados</summary><p>Estas referencias son opcionales. No son compras obligatorias; puedes elegir otras marcas o utilizar los materiales que ya tengas.</p><ul><li><a href="https://a.co/d/012x7NTa" target="_blank" rel="noopener noreferrer">Hojas para practicar <span aria-hidden="true">↗</span></a></li><li><a href="https://a.co/d/063PctXs" target="_blank" rel="noopener noreferrer">Pinturas acrílicas con pinceles <span aria-hidden="true">↗</span></a></li><li><a href="https://a.co/d/0a7u6zZK" target="_blank" rel="noopener noreferrer">Lienzos y pinceles <span aria-hidden="true">↗</span></a></li></ul></details>
 <p class="materials-closing"><em>Tú eliges los materiales. Yo te acompaño paso a paso.</em></p></div></div></section><section class="offer" id="inscripcion"><div class="offer-inner"><div><div class="eyebrow">Flores para Mí · Curso online</div><h2>Tu momento para<br><em>florecer</em><br>comienza aquí.</h2><p>Precio especial de introducción</p><div class="price">$999 <small>MXN</small></div><p>100% online · Inscripción y acceso a través de Skool.</p></div><div><a class="btn" href="https://www.skool.com/innerbloomart-by-clau-flores-6069/classroom" target="_blank" rel="noopener">SÍ, QUIERO FLORES PARA MÍ <span aria-hidden="true">↗</span></a><p class="small">Pago seguro en línea con tarjeta de crédito a través de Skool.</p><p class="small">Los materiales artísticos se adquieren por separado. Te compartiré una lista y enlaces sugeridos para conseguirlos.</p></div></div></section>
-<section class="end"><div class="eyebrow">Hoy puedes regalarte ese espacio</div><h2>No tienes que esperar a tener más tiempo para empezar a cuidarte.</h2><p class="serif" style="font-size:24px;color:var(--rose)">Una pausa. Una pincelada. Un nuevo comienzo.</p><a href="#inscripcion" class="nav-cta">Este momento es para mí ↗</a></section></main><footer class="footer"><a href="#inicio" aria-label="Inner Bloom Art · Inicio"><span class="logo-frame"><img src="assets/inner-bloom-logo-transparent-web.png" width="800" height="800" alt="Inner Bloom ART by Claudia Flores"></span></a><span>Pintando tu vida de colores.</span><span>Con amor, Clau Flores 🌷</span></footer><dialog id="materials-viewer" aria-labelledby="materials-viewer-title" aria-describedby="materials-viewer-help" onclick="if(event.target===this)this.close()"><div class="materials-viewer-toolbar"><h3 id="materials-viewer-title">Tus materiales, en detalle</h3><form method="dialog"><button class="materials-viewer-close">Cerrar</button></form></div><p class="materials-viewer-help" id="materials-viewer-help">Desliza la imagen hacia los lados y hacia abajo para leerla completa. También puedes abrirla en otra pestaña y usar el zoom de tu navegador.</p><div class="materials-viewer-scroll" tabindex="0" aria-label="Imagen ampliada de materiales; desplázate para recorrerla"><img loading="lazy" src="assets/materiales-guia.png" width="1536" height="1024" alt="Guía ampliada de los materiales básicos para Flores para Mí"></div><a class="materials-original-link" href="assets/materiales-guia.png" target="_blank" rel="noopener">Abrir imagen completa en otra pestaña ↗</a></dialog></body></html>
+<section class="end"><div class="eyebrow">Hoy puedes regalarte ese espacio</div><h2>No tienes que esperar a tener más tiempo para empezar a cuidarte.</h2><p class="serif" style="font-size:24px;color:var(--rose)">Una pausa. Una pincelada. Un nuevo comienzo.</p><a href="#inscripcion" class="nav-cta">Este momento es para mí ↗</a></section></main><footer class="footer"><a href="#inicio" aria-label="Inner Bloom Art · Inicio"><span class="logo-frame"><img src="assets/inner-bloom-logo-transparent-web.png" width="800" height="800" alt="Inner Bloom ART by Claudia Flores"></span></a><span>Pintando tu vida de colores.</span><span>Con amor, Clau Flores 🌷</span></footer><dialog id="materials-viewer" aria-labelledby="materials-viewer-title" aria-describedby="materials-viewer-help" onclick="if(event.target===this)this.close()"><div class="materials-viewer-toolbar"><h3 id="materials-viewer-title">Tus materiales, en detalle</h3><form method="dialog"><button class="materials-viewer-close">Cerrar</button></form></div><p class="materials-viewer-help" id="materials-viewer-help">Desliza la imagen hacia los lados y hacia abajo para leerla completa. También puedes abrirla en otra pestaña y usar el zoom de tu navegador.</p><div class="materials-viewer-scroll" tabindex="0" aria-label="Imagen ampliada de materiales; desplázate para recorrerla"><img loading="lazy" src="assets/materiales-guia.png" width="1536" height="1024" alt="Guía ampliada de los materiales básicos para Flores para Mí"></div><a class="materials-original-link" href="assets/materiales-guia.png" target="_blank" rel="noopener">Abrir imagen completa en otra pestaña ↗</a></dialog><script src="script.js"></script></body></html>
+
